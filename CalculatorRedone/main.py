@@ -109,10 +109,14 @@ class App(tk.Tk):
 
 	def delete_characters(self):
 		current_text = self.display_window.get('1.0', tk.END)
-		updated_text = current_text[:-1]
+		updated_text = current_text[:-2]
 
-		self.display_window.delete('1.0', tk.END)
-		self.display_window.insert(tk.END, updated_text)
+		print('Current text:',current_text)
+		print('Updated Text:', updated_text)
+
+
+		self.display_window.delete('1.0', 'end')
+		self.display_window.insert('1.0', updated_text)
 
 	def constants_method(self, char_z):
 		self.char_z = char_z
